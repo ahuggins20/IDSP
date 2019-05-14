@@ -26,7 +26,7 @@ pctGamesWon<-function(match,ratings){
       return(out)
     }
   }
-  gameScores<-cbind(gameScores[c(TRUE, FALSE)],gameScores[c(FALSE, TRUE)])
+  gameScores<-suppressWarnings(cbind(gameScores[c(TRUE, FALSE)],gameScores[c(FALSE, TRUE)]))
   winnerWon<-sum(gameScores[,1])
   loserWon<-sum(gameScores[,2])
   names<-rbind(as.character(match$winner_name),(as.character(match$loser_name)))
